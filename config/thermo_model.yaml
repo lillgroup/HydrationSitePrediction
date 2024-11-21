@@ -1,0 +1,58 @@
+name: gat2
+defaults:
+  - _self_
+  - data: watsite
+  #- data: case_study
+  #- data: protein_examples
+  #- data: protein_examples2
+general:
+  project_name: thermodynamics
+  repo_dir: /home/florian/Repos/HydrationSitePrediction
+  load_checkpoint: True
+training:
+  cuda_ids: [0]
+  num_workers: 10
+  pin_memory: true
+  batch_size: 4
+  max_epochs: 500
+  resume_path: /home/florian/Repos/HydrationSitePrediction/pretrained_model/thermo_model/checkpoint2.ckpt #absurd-snowflake
+  optimizer: adam
+  acc_grad_batches: 1
+  ema_rate: 0.999
+  optimizer_kwargs:
+    #lr: 0.001
+    lr: 0.000001
+    weight_decay: 0.00001
+  optimizer_scheduler: plateau
+  optimizer_scheduler_kwargs:
+    mode: min
+    factor: 0.7
+    patience: 20
+    min_lr: 0.001
+  noise_gradient: True
+  noise_gradient_amount: 0.02
+  strategy: "auto"
+inference:
+  batch_size: 1
+  cuda_ids: [0]
+model:
+  input_dim: 92
+  hidden_dim: 128
+  edge_input_dim: 10
+  edge_embedding_dim: 20
+  radius_max: 8.0
+  dropout: 0.0
+  heads: 10
+  num_layers: 2
+  ff_num_layers: 4
+  hidden_dim_ff: 128
+  train_entropy: True
+  train_enthalpy: True
+  inter_atom_edges: False
+  unidirect_edges: False
+data:
+  occupancy_cutoff: 0.3
+  water_perturbation_std: 0.05
+  thermodynamics: True #load thermodynamic data
+  standardize: False #standardize thermodynamic data
+

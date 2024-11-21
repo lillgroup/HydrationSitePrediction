@@ -1,0 +1,28 @@
+name: hydration_site_prediction
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pytorch
+  - pytorch-cuda=12.1
+  - ca-certificates
+  - openssl
+  - conda-forge::hydra-core
+  - certifi
+  - wandb
+  - pytorch-lightning
+  - matplotlib
+  - conda-forge::pymol-open-source
+  - conda-forge::plotly
+  - conda-forge::pandas
+  - conda-forge::scipy
+  - conda-forge::scikit-learn
+  - conda-forge::biopython
+  - numpy=1.24
+  - pip:
+      - torch_geometric
+      - torch_scatter
+      - --find-links https://data.pyg.org/whl/torch-2.4.0+cu121.html

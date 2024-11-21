@@ -1,0 +1,67 @@
+name: location_model
+defaults:
+  - _self_
+  - data: watsite
+  #- data: protein_examples
+  #- data: protein_examples2
+  #- data: case_study
+  #- data: xray_water
+  #- data: debug_florian
+general:
+  project_name: hs_location
+  repo_dir: /home/florian/Repos/HydrationSitePrediction
+  load_checkpoint: True
+training:
+  cuda_ids: [0]
+  num_workers: 10
+  pin_memory: true
+  batch_size: 1
+  max_epochs: 1000
+  resume_path: /home/florian/Repos/HydrationSitePrediction/pretrained_model/location_model/checkpoint1.ckpt
+  optimizer: adam
+  acc_grad_batches: 20
+  ema_rate: 0.999
+  optimizer_kwargs:
+    lr: 0.001
+    weight_decay: 0.00001
+  optimizer_scheduler: plateau
+  optimizer_scheduler_kwargs:
+    mode: min
+    factor: 0.7
+    patience: 20
+    min_lr: 0.00001
+inference:
+  batch_size: 1
+  cuda_ids: [0]
+scheduler:
+  schedule: log
+  min_sigma: 0.1
+  max_sigma: 3.0
+model:
+  input_dim: 92
+  num_layers: 5
+  hidden_dim: 100
+  activation: relu
+  batch_norm: False
+  num_mlp_layers: 2
+  radius_max: 6.0
+  radius_min: 0.0
+  dropout: 0.0
+  num_output_vectors: 1
+  num_weight_layers: 4
+  dis_embedding_dim: 32
+loss:
+  weights_penalty_scaling: 5.0
+  sigma: 0.5
+  kl_type: "kl_sym"
+  weights_penalty: true
+data:
+  thermodynamics: True #load thermodynamic data
+  standardize: False #standardize thermodynamic data
+  occupancy_cutoff: 0.5
+  #water_perturbation_std: 0.0
+
+evaluation:
+  certainty_cutoff: 0.0350
+  dst_threshold: 2.0
+  cluster_certainty_cutoff: 0.100

@@ -1,0 +1,6 @@
+name: xray_water
+dataset_path: /storage/florian/water_data/xray_data/refined
+train_split_path: /storage/florian/water_data/xray_data/test.txt
+valid_split_path: /storage/florian/water_data/xray_data/test.txt
+test_split_path: /storage/florian/water_data/xray_data/test.txt
+water_type: experimental

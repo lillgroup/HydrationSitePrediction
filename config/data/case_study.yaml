@@ -1,0 +1,6 @@
+name: case_study
+dataset_path: /storage/florian/water_data/case_study/data
+train_split_path: /storage/florian/water_data/case_study/test.txt
+valid_split_path: /storage/florian/water_data/case_study/test.txt
+test_split_path: /storage/florian/water_data/case_study/test.txt
+water_type: no_water
