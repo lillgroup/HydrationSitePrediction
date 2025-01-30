@@ -3,7 +3,7 @@
 This is the code supporting our work ''ACCELERATED HYDRATION SITE LOCALIZATION AND THERMODYNAMIC PROFILING''. We predict location, entropy and enthalpy of high occupancy hydration sites of proteins.
 
 <div style="text-align: right;">
-    <img src="documentation/images/predictions/prediction_cropped.gif" alt="Animation GIF"  />
+    <img src="images/prediction_cropped.gif" alt="Animation GIF"  />
 </div>
 
 
