@@ -3,7 +3,7 @@
 This is the code supporting our work ''ACCELERATED HYDRATION SITE LOCALIZATION AND THERMODYNAMIC PROFILING''. We predict location, entropy and enthalpy of high occupancy hydration sites of proteins.
 
 <div style="text-align: right;">
-    <img src="water_prediction.gif" alt="Animation GIF"  />
+    <img src="graphics/water_prediction.gif" alt="Animation GIF"  />
 </div>
 
 
@@ -136,8 +136,8 @@ python -m inference.visualization.thermodynamics.create_correlation_plots
 ```
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="documentation/images/enthalpy_valid.svg" alt="Correlation plot of enthalpy" style="width: 49%; margin-right: 10px;" />
-    <img src="documentation/images/entropy_valid.svg" alt="Correlation plot of entropy" style="width: 49%;" />
+    <img src="graphics/enthalpy_valid.svg" alt="Correlation plot of enthalpy" style="width: 49%; margin-right: 10px;" />
+    <img src="graphics/entropy_valid.svg" alt="Correlation plot of entropy" style="width: 49%;" />
 </div>
 
 The correlation between predictions and ground truth is given the following table:
@@ -169,7 +169,7 @@ python -m inference.visualization.calculate_displaced_waters
 The highest Pearson correlation of $0.931$ is found for a water dispacement tolerance distance of $2.4$ &Aring;. Note that we ignored hydrogens (both for the hydration sites and and the protein) in our model, which justifies this cutoff. 
 
 
-<div style="display: flex; justify-content: center; align-items: center;"> <img src="documentation/images/prediction_vs_experiment_correlation_displacement_2.4000000953674316A.svg" alt="Correlation plot of enthalpy" style="width: 100%; margin-right: 10px;" /> </div>
+<div style="display: flex; justify-content: center; align-items: center;"> <img src="graphics/prediction_vs_experiment_correlation_displacement_2.4A.svg" alt="Correlation plot of enthalpy" style="width: 100%; margin-right: 10px;" /> </div>
 
 
 ## Case studies
